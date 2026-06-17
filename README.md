@@ -12,7 +12,7 @@ Servidor de Minecraft con dashboard para gestión y organización del proyecto.
 
 Puedes ver los apuntes del proyecto aquí:
 
-- 🔗 https://TU-LINK-AQUI  
+- 🔗 https://4imk16.vercel.app 
 - 🌐 Versión HTML: `README.html`
 
 ---
