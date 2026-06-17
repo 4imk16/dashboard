@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Server dashboard</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="sidebar.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+<div id="app">
+
+    <!-- SIDEBAR -->
+    <div id="sidebar">
+
+        <div id="serverCard">
+            <h3>Server Dashboard</h3>
+            <p>Minecraft Panel</p>
+        </div>
+
+        <div id="statusBox">
+            <div class="statusRow">
+                <div class="dot" id="dot"></div>
+                <div id="statusText">Offline</div>
+            </div>
+
+            <div class="stat">RAM ---</div>
+            <div class="stat">CPU ---</div>
+        </div>
+
+        <div id="playersBox">
+            <div class="playerTitle">Users online</div>
+            <div id="playersList"></div>
+        </div>
+
+    </div>
+
+<div id="app2">
+
+    <!-- HEADER -->
+    <div id="header">
+        <span class="header-title">Server dashboard</span>
+        <button class="exit-btn" id="closeBtn" onclick="api.close()">✕</button>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div id="content">
+        <div class="button-group">
+            <button onclick="api.start()">START</button>
+            <button onclick="api.cmd('save-all')">SAVE</button>
+            <button onclick="stopServer()">STOP</button>
+        </div>
+
+        <pre id="log"></pre>
+
+        <div class="cmd-group">
+            <input id="cmdInput" placeholder="Enter command..." spellcheck="false"/>
+            <button id="sendCmd" onclick="sendCmd()">Send</button>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>

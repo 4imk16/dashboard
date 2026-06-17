@@ -1,0 +1,16 @@
+{
+  "name": "mine-panel",
+  "version": "1.0.0",
+  "description": "Panel para controlar Minecraft Server con Electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": ["minecraft", "panel", "electron"],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "electron": "^26.6.10"
+  }
+}

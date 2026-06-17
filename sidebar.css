@@ -1,0 +1,112 @@
+:root {
+    --radius:8px;
+}
+
+#sidebar {
+    width:260px;
+    flex-shrink:0;
+    background:var(--sidebar);
+    padding:18px;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    border-right: 3px solid var(--border);
+}
+
+#serverCard {
+    background: #2d353f;
+    padding:16px;
+    border-radius:var(--radius);
+    border:1px solid var(--border);
+}
+
+#serverCard h3 {
+    color:var(--text);
+    font-size:16px;
+}
+
+#serverCard p {
+    color:var(--muted);
+    font-size:12px;
+}
+
+#statusBox,
+#playersBox {
+    background:var(--panel);
+    padding:14px;
+    border-radius:var(--radius);
+    border:1px solid var(--border);
+}
+
+#playersBox {
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+#playersBox::-webkit-scrollbar {
+    display: none;
+}
+
+.statusRow {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:10px;
+}
+
+.dot {
+    width:10px;
+    height:10px;
+    border-radius:50%;
+
+    background:#ff4d4d;
+    box-shadow:0 0 10px #ff4d4d;
+    transition:.2s;
+}
+
+.dot.online {
+    background:#00ff99;
+    box-shadow:0 0 12px #00ff99;
+}
+
+.stat {
+    background:var(--panel2);
+    padding:8px;
+    border-radius:8px;
+    margin-top:6px;
+    color:var(--muted);
+    font-size:13px;
+}
+
+.playerTitle {
+    color:var(--text);
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+#playersList {
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.player {
+    background: #212731;
+    padding:8px;
+    border-radius:8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.player .material-icons {
+    font-size: 18px;
+    color: var(--muted);
+}
+
+.player-name {
+    color: var(--text);
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
