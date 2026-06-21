@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Panel para controlar Minecraft Server con Electron",
   "main": "main.js",
+  "icon": "assets/icon.ico",
   "scripts": {
     "start": "electron ."
   },

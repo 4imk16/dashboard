@@ -12,7 +12,8 @@ const serverPath = path.join(__dirname, "..", "server");
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 650,
+    icon: path.join(__dirname, 'assets/icon.ico'),
+    width: 920,
     height: 620,
     minHeight: 432,
     minWidth: 560,

@@ -64,7 +64,25 @@
 
 </div>
 
-<script src="app.js"></script>
+    <dialog id="usermodal" class="modal">
+    <form id="modalForm" method="dialog">
+        <h3 id="modalTitle">Acción a jugador</h3>
 
+        <label id="modalNameWrapper" style="display: flex; gap: 10px; align-items: center; margin-top: 16px;">
+        <span id="modalPlayerLabel">Jugador</span>
+        <input id="modalReason" autocomplete="off" placeholder="Razón" required="" />
+        </label>
+
+        <div class="actions">
+        <button type="button" class="cancel" id="modalClose">Cancelar</button>
+        <button type="button" class="confirm" id="modalBan">Banear</button>
+        <button type="button" class="confirm" id="modalKick">Expulsar</button>
+        </div>
+    </form>
+    </dialog>
+
+</div>
+
+<script src="app.js"></script>
 </body>
 </html>

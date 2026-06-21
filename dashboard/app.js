@@ -7,6 +7,64 @@ const statusText = document.getElementById("statusText");
 const playersList = document.getElementById("playersList");
 const players = new Set();
 
+const usermodal = document.getElementById("usermodal");
+const modalForm = document.getElementById("modalForm");
+const modalReason = document.getElementById("modalReason");
+const modalClose = document.getElementById("modalClose");
+const modalBan = document.getElementById("modalBan");
+const modalKick = document.getElementById("modalKick");
+const modalTitle = document.getElementById("modalTitle");
+const modalPlayerLabel = document.getElementById("modalPlayerLabel");
+let selectedPlayer = "";
+
+function openPlayerModal(name) {
+    selectedPlayer = name;
+    modalTitle.textContent = `Acción a jugador: ${name}`;
+    modalPlayerLabel.textContent = `Razón para ${name}`;
+    modalReason.value = "";
+    usermodal.showModal();
+    modalReason.focus();
+}
+
+function closePlayerModal() {
+    selectedPlayer = "";
+    modalReason.value = "";
+    usermodal.close();
+}
+
+function sendPlayerCommand(action) {
+    const reason = modalReason.value.trim();
+    if (!reason) {
+        modalReason.focus();
+        return;
+    }
+
+    const command = `/${action} ${selectedPlayer} ${reason}`;
+    api.cmd(command);
+    log.textContent += `> ${command}\n`;
+    log.scrollTop = log.scrollHeight;
+    closePlayerModal();
+}
+
+playersList.addEventListener("click", event => {
+    const playerEl = event.target.closest(".player");
+    if (!playerEl) return;
+
+    const playerName = playerEl.querySelector(".player-name")?.textContent?.trim();
+    if (!playerName) return;
+
+    openPlayerModal(playerName);
+});
+
+modalClose.addEventListener("click", closePlayerModal);
+modalBan.addEventListener("click", () => sendPlayerCommand("ban"));
+modalKick.addEventListener("click", () => sendPlayerCommand("kick"));
+
+modalForm.addEventListener("submit", event => {
+    event.preventDefault();
+    closePlayerModal();
+});
+
 // STATUS SYSTEM
 
 function setServerStatus(isOnline) {
